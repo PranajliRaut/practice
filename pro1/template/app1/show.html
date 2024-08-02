@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+    {% block title %}
+    <title>Home</title>
+    {% endblock %}
+
+{% block content %}
+<h1> STUDENT FORM </h1>
+<table class="table table-success table-striped">
+    <thead>
+    <tr>
+        <th>Stu_ID</th>
+        <th>FIRST_NAME</th>
+        <th>LAST_NAME</th>
+        <th>GENDER</th>
+        <th>COURCE</th>
+        <th>CITY</th>
+        <th>EMAIL</th>
+        <th>ACTION</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in obj %}
+    <tr>
+        <td>{{i.stu_id}}</td>
+        <td>{{i.first_name}}</td>
+        <td>{{i.last_name}}</td>
+        <td>{{i.gender}}</td>
+        <td>{{i.cource}}</td>
+        <td>{{i.city}}</td>
+        <td>{{i.email}}</td>
+        <td>
+            <a href="/a1/uv/{{i.stu_id}}"><button class="btn btn-warning">UPDATE</button> </a>
+            <a href="/a1/dv/{{i.stu_id}}"><button class="btn btn-danger">DELETE</button></a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
